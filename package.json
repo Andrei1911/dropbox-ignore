@@ -1,0 +1,15 @@
+{
+  "name": "dropbox-ignore",
+  "version": "1.0.0",
+  "description": "Module that creates .dropboxignore and makes dropbox ignore your files similar to how .gitignore works.",
+  "main": "index.js",
+  "bin": {
+    "dropbox-ignore": "./index.js"
+  },
+  "author": "Andrei Popa",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.5.2",
+    "yargs": "^17.7.2"
+  }
+}
