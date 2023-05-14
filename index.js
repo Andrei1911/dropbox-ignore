@@ -91,8 +91,45 @@ function createDropboxIgnoreFile(directory, clear = false) {
   }
 }
 
+function removeFromDropboxIgnoreFile(directory, file) {
+  const dropboxIgnoreFilePath = path.join(directory, '.dropboxignore');
+  fs.readFile(dropboxIgnoreFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading .dropboxignore file:', err);
+      return;
+    }
+    let lines = data.split('\n');
+    const index = lines.indexOf(file);
+    if (index > -1) {
+      lines.splice(index, 1);
+      fs.writeFile(dropboxIgnoreFilePath, lines.join('\n'), (err) => {
+        if (err) {
+          console.error('Error writing .dropboxignore file:', err);
+        } else {
+          console.log(`File ${file} has been removed from .dropboxignore`);
+        }
+      });
+    } else {
+      console.log(`File ${file} does not exist in .dropboxignore`);
+    }
+  });
+}
+
+function unignoreFile(directory, file) {
+  fs.access(file, fs.constants.F_OK, (err) => {
+    if (err) {
+      console.log(`File or directory ${file} does not exist. Skipping.`);
+      return;
+    }
+    clearDropboxIgnore(file);
+    removeFromDropboxIgnoreFile(directory, file);
+  });
+}
+
 // Call the function directly, passing in the current directory
-if (process.argv[2] === 'clear') {
+if (process.argv[2] === '-u') {
+  unignoreFile(process.cwd(), process.argv[3]);
+} else if (process.argv[2] === 'clear') {
   createDropboxIgnoreFile(process.cwd(), true);
 } else {
   createDropboxIgnoreFile(process.cwd());
