@@ -87,7 +87,7 @@ function createDropboxIgnoreFile(directory, clear = false) {
       }
     });
   } catch (error) {
-    console.error("Error in dropbox-ignore script:\n", error)
+    console.error("Error in dropbox-ignore-cli script:\n", error)
   }
 }
 
