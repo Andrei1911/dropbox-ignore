@@ -3,11 +3,28 @@
   "version": "1.0.0",
   "description": "Module that creates .dropboxignore and makes dropbox ignore your files similar to how .gitignore works.",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Andrei1911/dropbox-ignore.git"
+  },
+  "keywords": [
+    "dropbox",
+    "ignore",
+    "dropbox-ignore"
+
+  ],
   "bin": {
     "dropbox-ignore": "./index.js"
   },
-  "author": "Andrei Popa",
+  "author": "Andrei Popa andreipopa191187@gmail.com",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andrei1911/dropbox-ignore/issues"
+  },
+  "homepage": "https://github.com/Andrei1911/dropbox-ignore#readme",
   "dependencies": {
     "chokidar": "^3.5.2",
     "yargs": "^17.7.2"
