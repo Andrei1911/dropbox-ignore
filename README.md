@@ -1,6 +1,6 @@
 # Dropbox Ignore Node Package
 
-A Node.js package that provides functionality to manage the Dropbox ignore settings using the `.dropboxignore` file.
+Dropbox Ignore is a command-line utility that allows you to easily set Dropbox to ignore specific files or directories, similar to how `.gitignore` works for Git.
 
 ## Installation
 
@@ -47,6 +47,19 @@ To clear the entire Dropbox ignore list, removing all files and directories, run
 ```bash
 dropbox-ignore clear
 ```
+#### <u>Important Note for PowerShell Users</u>
+
+If you're using PowerShell, you might encounter an error about running scripts being disabled on your system. This is due to PowerShell's execution policy.
+
+To enable scripts, you can run the following command in PowerShell as an administrator:
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Please note that changing the execution policy can potentially expose you to security risks. Only proceed if you understand the implications.
+
+Alternatively, you can use a different command prompt, like Git Bash or the standard Windows Command Prompt, which do not enforce such policies.
 
 ### JavaScript API
 
@@ -95,6 +108,8 @@ Replace `directory` with the path to the directory containing the `.dropboxignor
 - This package uses PowerShell commands (`Set-Content` and `Clear-Content`) to interact with the Dropbox ignore settings on Windows. Make sure you have PowerShell installed on your machine.
 - The package assumes that the current working directory is the root directory of your project. Make sure to run the commands from the appropriate directory.
 - Make sure you can get your files from other sources(similar to how `node install` does). Adding a file to `.dropboxignore` list will make it disappear on every other machine connected to your Dropbox account, as if it was deleted.
+- In order to use this command in PowerShell, you need to change it's execution policy using `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`.
+- This has been built using the help of chatGPT4.
 
 ## License
 
