@@ -1,5 +1,5 @@
 {
-  "name": "dropbox-ignore",
+  "name": "dropbox-ignore-cli",
   "version": "1.0.0",
   "description": "Module that creates .dropboxignore and makes dropbox ignore your files similar to how .gitignore works.",
   "main": "index.js",
@@ -13,11 +13,11 @@
   "keywords": [
     "dropbox",
     "ignore",
-    "dropbox-ignore"
+    "dropbox-ignore-cli"
 
   ],
   "bin": {
-    "dropbox-ignore": "./index.js"
+    "dropbox-ignore-cli": "./index.js"
   },
   "author": "Andrei Popa andreipopa191187@gmail.com",
   "license": "MIT",

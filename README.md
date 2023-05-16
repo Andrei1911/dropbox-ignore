@@ -11,21 +11,21 @@ To use this package, make sure you have Node.js installed on your machine. Then,
 3. Run the following command to install the package:
 
 ```bash
-npm install dropbox-ignore
+npm install dropbox-ignore-cli
 ```
 
 ## Usage
 
 ### Command-Line Interface (CLI)
 
-You can use the package via the command-line interface (CLI) by running the `dropbox-ignore` command.
+You can use the package via the command-line interface (CLI) by running the `dropbox-ignore-cli` command.
 
 #### Ignore Files or Directories
 
 To add files or directories to the Dropbox ignore list, run the following command:
 
 ```bash
-dropbox-ignore
+dropbox-ignore-cli
 ```
 
 This will create a `.dropboxignore` file in the current directory and automatically add the `node_modules` directory if it exists. Any additional files or directories can be specified in the `.dropboxignore` file.
@@ -35,17 +35,17 @@ This will create a `.dropboxignore` file in the current directory and automatica
 To remove a file or directory from the Dropbox ignore list, run the following command:
 
 ```bash
-dropbox-ignore -u <file_or_directory_path>
+dropbox-ignore-cli -u <file_or_directory_path>
 ```
 
 Replace `<file_or_directory_path>` with the path to the file or directory you want to remove from the ignore list.
 
 #### Clear Ignore List
 
-To clear the entire Dropbox ignore list, removing all files and directories, run the following command. Note that this will not modify your `.dropboxignore` file, so if you re-run `dropbox-ignore`, you can undo this command.
+To clear the entire Dropbox ignore list, removing all files and directories, run the following command. Note that this will not modify your `.dropboxignore` file, so if you re-run `dropbox-ignore-cli`, you can undo this command.
 
 ```bash
-dropbox-ignore clear
+dropbox-ignore-cli clear
 ```
 #### <u>Important Note for PowerShell Users</u>
 
@@ -70,7 +70,7 @@ You can also use the package programmatically in your Node.js applications.
 To import the package into your JavaScript file, use the following code:
 
 ```javascript
-const dropboxIgnore = require('dropbox-ignore');
+const dropboxIgnore = require('dropbox-ignore-cli');
 ```
 
 #### Adding Files or Directories to Ignore List
